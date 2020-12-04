@@ -13,9 +13,9 @@ ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
 html = urllib.request.urlopen(url, context=ctx).read()
-soup = BeautifulSoup(html, 'html.parser')
+soup = BeautifulSoup(html, 'html.parser') # we can give you a bad html, figure out whats going on and give me the nice thing i ask for
 
 # Retrieve all of the anchor tags
-tags = soup('a')
+tags = soup('a') # 'a' is the anchor tag <a ...> <\a>
 for tag in tags:
     print(tag.get('href', None))
